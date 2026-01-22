@@ -1,0 +1,23 @@
+<h1>Khao Yai Piping Team-Building 2026</h1>
+
+<%= form_with model: @registration do |f| %>
+  <div>
+    <%= f.label :name, "Name" %><br>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <%= f.label :man_number, "Man number" %><br>
+    <%= f.text_field :man_number, required: true %>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <p><strong>Will you attend the team-building trip?</strong></p>
+    <%= f.radio_button :attending, true, required: true %> Yes<br>
+    <%= f.radio_button :attending, false, required: true %> No
+  </div>
+
+  <div style="margin-top: 16px;">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
