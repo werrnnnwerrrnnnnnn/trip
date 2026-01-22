@@ -7,6 +7,7 @@
       <th>Man Number</th>
       <th>Attending</th>
       <th>Created At</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -17,7 +18,19 @@
         <td><%= r.man_number %></td>
         <td><%= r.attending ? "Yes" : "No" %></td>
         <td><%= r.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_registration_path(r) %>
+
+          <%= button_to "Delete",
+                admin_registration_path(r),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<p>
+  <%= link_to "Back to Home", root_path %>
+</p>
