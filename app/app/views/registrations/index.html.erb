@@ -1,0 +1,23 @@
+<h1>Registrations</h1>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Man Number</th>
+      <th>Attending</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrations.each do |r| %>
+      <tr>
+        <td><%= r.name %></td>
+        <td><%= r.man_number %></td>
+        <td><%= r.attending ? "Yes" : "No" %></td>
+        <td><%= r.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

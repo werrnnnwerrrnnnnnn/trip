@@ -1,4 +1,10 @@
 class RegistrationsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "admin", only: [:index]
+
+  def index
+    @registrations = Registration.order(created_at: :desc)
+  end
+
   def new
     @registration = Registration.new
   end
